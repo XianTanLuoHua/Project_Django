@@ -1,0 +1,271 @@
+reverse  反转
+eval  把字符串变成表达式
+repr(x )将对象 x 转换为表达式字符串
+chr 输入int类型 得到的是str ascii
+ord 输入str类型将字符转换为int ascii
+property 属性
+attribute 属性特质
+isinstance()
+issubclass()
+isdigit 判断是否为数字
+digit  数字
+isalpha 判断是否为字符
+isalnum 判断有无符号
+setattr()
+getattr()
+hasattr()
+open  打开
+path  路径
+math  数学
+file  文件
+yield  迭代器
+call  调用
+iter  迭代
+able  可以 能够
+attribute  属性
+error  错误
+quit  停止
+exit  退出
+next   继续
+index  索引
+find 查找
+insert  插入
+sort  排序 分类
+reverse  逆转
+pop  弹出
+remove  删除指定
+value  值
+except 异常
+try 正常
+raise 引发 唤起
+split  分割并替换
+partition 分割
+splitlines 分割行
+replace  替换
+filter  过滤
+enumerate  排序 列举
+clear  清除
+del  删除
+color  颜色
+font 字体
+keyword 关键字 有33个
+setting  设置
+close  结束
+count  统计
+continue  跳过
+break  终止
+height 高度
+width 宽度
+border 边框
+finally 最后
+global 全局
+nonlocal 非局部的
+left 左
+right 右
+join 链接
+person 人
+teacher 老师
+date  日期
+data 数据
+classmethod  类方法
+say  说 讲
+public 公开
+protected 受保护的
+private 私有的
+sellp 睡眠
+function 功能 函数
+random 随机数
+short 短的
+circuit 电路 回路
+range 取值范围看左不看右
+randint 取值全范围随机数 左右都看
+capita lize 头字母 大写
+title 头部
+startwith 判断开头
+end 结束
+global 全局
+strip 剥离
+center 中央
+just 对齐
+partition 分开
+info 信息
+image  影片
+photo 照片
+size 尺寸
+resolution 分辨率
+event 事件
+method 方法
+static 静态
+metaclass 元类
+abstract 抽象
+bases 基础
+dest port 目标端口
+dest ip 目的ip
+socket 套接字
+STREAM 流
+port 端口
+sendto 发送到
+ifconfig 网络配置
+page 页码
+location 位置
+head 头部
+body 身体主体
+menu 菜单
+table 目录 表格
+content 目录
+content 目录
+close 结束
+send 传入
+write 书写
+terminate 终止进程
+multiprocessing 进程
+multi 多
+thread 线程
+multiprocessing 进程
+current 最近的正在的
+target 目标线程
+daemon 守护线程
+lock 锁
+active 有效的
+system 系统
+make 做
+save 报讯
+load 加载
+reduce 减少
+change 改变
+map 映射
+filter 过滤
+reduce 累加 functools包
+package 程序包
+display 显示
+terminate 终结
+alive 活跃
+apply_async 异步执行
+empty 空的 无意义的
+full 完整 满的
+qsize 查看个数
+wait 等待
+Manager 管理
+message 消息
+package 包
+keydown 按下键盘
+reset  重置
+control 控制
+listen 监听
+recv 接收
+send 发送
+decode 解码
+encode 编码
+connect 连接
+bind 绑定
+stream 流
+accept 接收
+re usr addr 重复使用用户地址
+server 服务器
+client 客户
+span 范围
+group 组
+search 搜索寻找
+compile 编译正则
+sub 正则替换
+grep linux文本查找
+acquire 获得
+release 释放
+current 当前
+terminate 终止进程
+os.kill 终止指定进程
+content 目录内容
+found 创建
+connection 连接状态
+keep 持续保持
+alive 活性
+favicon 图标
+request 请求
+charset 字符集
+border 边框
+blank 空白
+target 目标
+action 动作
+label 标签标记
+radio 接收
+checkbox 复选框
+textarea 多行输入
+select 选择
+option 选项
+background 背景底色
+bold 粗体
+solid 实线
+dashed 虚线
+align 文本排向
+block 块
+collapse 折叠
+splice 交接
+lenght 长度
+push 增加
+iterval 重复
+timeout 超时设定
+document 文档
+prev 上一个
+button 按钮
+click 点击
+focus 焦距
+blur 模糊
+mouse 鼠标
+out 外部
+enter 进入
+delegate 代理
+console 控制台
+success 成功
+async 异步
+regedit 注册表
+create 创造
+database 数据库
+alter 修改
+desc 描述 下降
+like 可能
+asc 从小到大
+desc 从大到小
+order 排序 秩序
+having 所有
+limit 限制 界限
+drop 减少
+update 更新
+inceement 增长
+decimal 小数点
+modify 修改
+distinct 独特 去重
+between 在...之间
+null 零,空
+group 组
+concat 联系 连接
+round 小数
+rollup 归纳
+inner 内部的
+source 导入,根源
+cursor 游标 光标
+fetch 接取
+begin 开始
+rollback 回滚
+password 密码
+local 本地
+execute 执行
+primary 主要的
+foreign 外部
+references 参考 依据
+before 在...之前
+score 权重
+field 属性
+flush 冲刷 冲洗
+parse 解析
+replicas 复制 复制品
+mastar 主
+status 状态
+commit 提交
+push 增加 推送
+pull 拉取
+checkout 校验
+clone 克隆
+conflict 冲突
+branch 分支
+merge 融合 合并
+origin 远端
