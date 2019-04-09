@@ -165,7 +165,134 @@
 
 # 集群
 
+​	**集群是一组相互独立的、通过高速网络互联的计算机，它们构成了一个组，并以单一系统的模式加以管理。一个客户与集群相互作用时，集群像是一个独立的服务器。集群配置是用于提高可用性和可缩放性。**
+**当请求到来首先由负载均衡服务器处理，把请求转发到另外的一台服务器上。**
+
+## 设置第一台机器
+
+172.16.179.130为当前ubuntu机器的ip
+在172.16.179.130上进⼊Desktop⽬录，创建conf⽬录
+在conf⽬录下创建⽂件7000.conf，编辑内容如下
+```
+port 7000
+bind 172.16.179.130
+daemonize yes
+pidfile 7000.pid
+cluster-enabled yes
+cluster-config-file 7000_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+在conf⽬录下创建⽂件7001.conf，编辑内容如下
+```
+port 7001
+bind 172.16.179.130
+daemonize yes
+pidfile 7001.pid
+cluster-enabled yes
+cluster-config-file 7001_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+在conf⽬录下创建⽂件7002.conf，编辑内容如下
+```
+port 7002
+bind 172.16.179.130
+daemonize yes
+pidfile 7002.pid
+cluster-enabled yes
+cluster-config-file 7002_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+总结：三个⽂件的配置区别在port、pidfile、cluster-config-file三项
+使⽤配置⽂件启动redis服务
+
+```
+redis-server 7000.conf
+redis-server 7001.conf
+redis-server 7002.conf
+```
+## 设置第二台机器
+172.16.179.131为当前ubuntu机器的ip
+在172.16.179.131上进⼊Desktop⽬录，创建conf⽬录
+在conf⽬录下创建⽂件7003.conf，编辑内容如下
+```
+port 7003
+bind 172.16.179.131
+daemonize yes
+pidfile 7003.pid
+cluster-enabled yes
+cluster-config-file 7003_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+在conf⽬录下创建⽂件7004.conf，编辑内容如下
+```
+port 7004
+bind 172.16.179.131
+daemonize yes
+pidfile 7004.pid
+cluster-enabled yes
+cluster-config-file 7004_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+在conf⽬录下创建⽂件7005.conf，编辑内容如下
+```
+port 7005
+bind 172.16.179.131
+daemonize yes
+pidfile 7005.pid
+cluster-enabled yes
+cluster-config-file 7005_node.conf
+cluster-node-timeout 15000
+appendonly yes
+```
+总结：三个⽂件的配置区别在port、pidfile、cluster-config-file三项
+使⽤配置⽂件启动redis服务
+```
+redis-server 7003.conf
+redis-server 7004.conf
+redis-server 7005.conf
+```
 
 
 
+## 创建集群
 
+redis的安装包中包含了redis-trib.rb，⽤于创建集群
+
+接下来的操作在172.16.179.130机器上进⾏
+
+将命令复制，这样可以在任何⽬录下调⽤此命令
+
+```
+sudo cp /usr/share/doc/redis-tools/examples/redis-trib.rb /usr/local/bin/
+```
+
+安装ruby环境，因为redis-trib.rb是⽤ruby开发的
+
+	sudo apt-get install ruby
+
+运⾏如下命令创建集群
+
+```
+redis-trib.rb create --replicas 1 172.16.179.130:7000 172.16.179.130:7001 172.16.179.130:7002 172.16.179.131:7003 172.16.179.131:7004 172.16.179.131:7005
+```
+
+## 数据验证
+
+根据上图可以看出，当前搭建的主服务器为7000、7001、7003，对应的从服务器是7004、7005、7002
+
+在172.16.179.131机器上连接7002，加参数-c表示连接到集群
+
+	redis-cli -h 172.16.179.131 -c -p 7002
+
+写⼊数据
+
+	set name itheima
+
+⾃动跳到了7003服务器，并写⼊数据成功
+
+在7003可以获取数据，如果写入数据又重定向到7000(负载均衡) 
