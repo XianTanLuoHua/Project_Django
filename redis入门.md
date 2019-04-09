@@ -1,4 +1,4 @@
-# **redis安装**
+# redis安装
 
 #### 	**step1:下载**
 	wget <http://download.redis.io/releases/redis-4.0.9.tar.gz>
@@ -39,7 +39,7 @@
 	ps aux | grep redis    先查看redis-server的pid
 	sudo kill -9 pid
 
-# **redis数据类型与数据库语法**
+# redis数据类型与数据库语法
 ## **string**
 ​	**字符串类型是 Redis 中最为基础的数据存储类型，它在 Redis 中是二进制的,这			便意味着该类型可以接受任何格式的数据，如JPEG图像数据或Json对象描述信息等。在Redis中字符串类型的Value最多可以容纳的数据长度是512M。**
 
@@ -129,39 +129,41 @@
 	zrem info 权重    删除zset中指定权重的所有的值
 
 # 主从
-**⼀个master可以拥有多个slave，⼀个slave⼜可以拥有多个slave，如此下去，形成了强⼤的多级服务器集群架构**
-**master用来写数据，slave用来读数据，经统计：网站的读写比率是10:1**
-**通过主从配置可以实现读写分离**
+​	**⼀个master可以拥有多个slave，⼀个slave⼜可以拥有多个slave，如此下去，形成了强⼤的多级服务器集群架构**
+	**master用来写数据，slave用来读数据，经统计：网站的读写比率是10:1**
+	**通过主从配置可以实现读写分离**
 
 ## 设置
-#### 设置主
-**1.**ifconfig查看当前ip地址
-**2.**进入配置文件夹 cd /etc/redis/
-**3.**修改etc/redis/redis.conf文件
-打开sudo vi redis.conf 
-找到bing修改为bind 192.168.26.128
-**3.**重启redis服务
-关闭服务器sudo service redis stop 
-以指定配置文件开启服务器redis-server /etc/redis/redis.conf
-#### 设置从
-**1.**复制etc/redis/redis.conf文件, sudo cp /etc/redis/redis.conf  /etc/redis/slave1,2,3,4,5.conf
-**2.**修改复制后的文件slave1,2,3,4,5.conf
-修改和主服务器使用一个ip, bind 192.168.26.128
-在REPLICATION行下添加主服务器的信息, slaveof 192.168.26.128 6379
-修改port,port 6380......***注意!***端口号不能和其他的主从服务器相同
+##### *设置主*
+	1.ifconfig查看当前ip地址
+	2.进入配置文件夹 cd /etc/redis/
+	3.修改etc/redis/redis.conf文件
+	打开sudo vi redis.conf 
+	找到bing修改为bind 192.168.26.128
+	4.重启redis服务
+	关闭服务器sudo service redis stop 
+	以指定配置文件开启服务器redis-server /etc/redis/redis.conf
+##### *设置从*
+	**1.**复制etc/redis/redis.conf文件, sudo cp /etc/redis/redis.conf  /etc/redis/slave1,2,3,4,5.conf
+	**2.**修改复制后的文件slave1,2,3,4,5.conf
+	修改和主服务器使用一个ip, bind 192.168.26.128
+	在REPLICATION行下添加主服务器的信息, slaveof 192.168.26.128 6379
+	修改port,port 6380......<u>***注意!***端口号不能和其他的主从服务器相同</u>
 ## 开启
-##### 开启主服务
+##### *开启主服务*
 	redis-server /etc/redis/redis.conf
-##### 开启从服务
+##### *开启从服务*
 	redis-server /etc/redis/selave12,3,4,5.conf
-#### 进入客户端
-##### 主客户端(主修改)
+## 进入客户端
+##### *主客户端(主修改)*
 	redis-cli -h 192.168.42.77 -p 6379
-##### 从客户端(只能获取)
+##### *从客户端(只能获取)*
 	redis-cli -h 192.168.42.77 -p 6380
 	redis-cli -h 192.168.42.77 -p 6381
 
 
+
+# 集群
 
 
 
