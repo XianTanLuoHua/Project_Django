@@ -29,7 +29,15 @@
 	配置⽂件⽬录为/usr/local/redis/redis.conf
 	sudo cp /usr/local/redis/redis.conf /etc/redis/如果etc目录下没有redis文件需要手动创建
 
+# 启动数据库
 
+#### 启动服务端
+	redis-server
+#### 启动客户端
+	redis-cli
+#### 终结服务端
+	ps aux | grep redis    先查看redis-server的pid
+	sudo kill -9 pid
 
 # **redis数据类型与数据库语法**
 ## **string**
@@ -119,6 +127,44 @@
 	zscore key value     查找指定的zset中指定值的权重
 ##### *删除*
 	zrem info 权重    删除zset中指定权重的所有的值
+
+# 设置主从
+**⼀个master可以拥有多个slave，⼀个slave⼜可以拥有多个slave，如此下去，形成了强⼤的多级服务器集群架构**
+**master用来写数据，slave用来读数据，经统计：网站的读写比率是10:1**
+**通过主从配置可以实现读写分离**
+
+
+
+#### 设置主
+**1.**ifconfig查看当前ip地址
+**2.**进入配置文件夹 cd /etc/redis/
+**3.**修改etc/redis/redis.conf文件
+打开sudo vi redis.conf 
+找到bing修改为bind 192.168.26.128
+**3.**重启redis服务
+关闭服务器sudo service redis stop 
+以指定配置文件开启服务器redis-server /etc/redis/redis.conf
+#### 设置从
+**1.**复制etc/redis/redis.conf文件, sudo cp /etc/redis/redis.conf  /etc/redis/slave1,2,3,4,5.conf
+**2.**修改复制后的文件slave1,2,3,4,5.conf
+修改和主服务器使用一个ip, bind 192.168.26.128
+在REPLICATION行下添加主服务器的信息, slaveof 192.168.26.128 6379
+修改port,port 6380......***注意!***端口号不能和其他的主从服务器相同
+#### 开启服务
+**开启主服务**
+	redis-server /etc/redis/redis.conf
+**开启从服务**
+	redis-server /etc/redis/selave12,3,4,5.conf
+#### 进入客户端
+**主客户端(主修改)**
+	redis-cli -h 192.168.42.77 -p 6379
+**从客户端(只能获取)**
+	redis-cli -h 192.168.42.77 -p 6380
+	redis-cli -h 192.168.42.77 -p 6381
+
+
+
+
 
 
 
