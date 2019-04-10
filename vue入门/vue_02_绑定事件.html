@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="mygame">
+        <p>您最喜欢的游戏是:{{mygame}}</p>
+        <button v-on:click="btnclick('我的世界')">我的世界</button>
+        <button v-on:click="btnclick('勇者斗恶龙')">勇者斗恶龙</button>
+        <button v-on:click="btnclick('英雄联盟')">英雄联盟</button>
+        <button @click="btnclick('古墓丽影')">古墓丽影</button>
+        <div>您选择了{{count}}次了</div>
+    </div>
+    <br><br>
+
+
+
+    <div id="my_cl">
+        <button @click='counter+=1'>点一下加一次</button>
+        <p>您一共点击了{{counter}}次</p>
+    </div>
+    将按钮与事件绑定,每次点击触发事件使counter+1
+
+
+
+    <script>
+        var my_app_01 = new Vue({
+            el:'#mygame',
+            data:{
+                mygame:'黑暗之魂',
+                count:0
+            },
+            methods:{
+                btnclick:function(game){
+                    this.mygame=game
+                    this.count+=1
+                }
+            }
+
+        })
+
+        var my_app_02 = new Vue({
+            el:'#my_cl',
+            data:{
+                counter:0
+            }
+        })
+    </script>
+</body>
+</html>

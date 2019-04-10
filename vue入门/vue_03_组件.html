@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    
+</head>
+<body>
+    
+    <div id="my_app">
+        <ul>
+            <!-- 使用了一个自定义标签并使其循环遍历Vue对象中的数据保存为item,v-bind每次遍历的数据传入到game属性中,
+            由于模板中的值与属性绑定在了一起所以game.tetle就相当于item.titel -->
+            <game_item v-for="item in games" v-bind:game="item"></game_item>
+        </ul>
+    </div>
+
+<script>
+
+    // 定义自定义标签标签名字为game_item,标签的属性为game,标签的模板为template内的值
+    Vue.component('game_item',{
+        props:['game'],
+        // template: '<li>{{game.title}}</li>'
+    })
+
+    //定义一个Vue对象id为#my_app,data中存放了一个k为games的列表
+    var myapp = new Vue({
+        el:'#my_app',
+        data:{
+            games:[
+                {title:'斗地主'},
+                {title:'打麻雀'},
+            ]           
+        }
+    })
+    </script>
+</body>
+</html>
