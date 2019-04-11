@@ -1,0 +1,41 @@
+<head>
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div v-if="ok">使用v-if的div标签</div>
+            <div v-else>使用v-else的div标签，要和v-if写在一起</div>
+    
+            <div v-if="type=='A'">
+                A
+            </div>
+            <div v-else-if="type=='B'">
+                B
+            </div>
+            <div v-else-if="type=='C'">
+                C
+            </div>
+            <div v-else>
+                Not A/B/C
+            </div>
+    
+            <input type="button" value="改变字母" @click="fnChange">
+            <p v-if="ok">使用v-if的p标签</p>
+            <p v-show="ok">使用v-show的p标签</p>
+        </div>
+    
+        <script>
+            var vm = new Vue({
+                el:'#app',
+                data:{
+                    ok:true,
+                    type:'B'
+                },
+                methods:{
+                    fnChange:function(){
+                        this.type = 'D';
+                    }
+                }
+            })
+        </script>
+    </body>

@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./vue.js"></script>
+    <script src="https://vuejs.org/js/vue.min.js"></script>
 </head>
 <body>
     <div id="mygame">
         <p>您最喜欢的游戏是:{{mygame}}</p>
+        <input v-model='mygame'>
         <button v-on:click="btnclick('我的世界')">我的世界</button>
         <button v-on:click="btnclick('勇者斗恶龙')">勇者斗恶龙</button>
         <button v-on:click="btnclick('英雄联盟')">英雄联盟</button>
         <button @click="btnclick('古墓丽影')">古墓丽影</button>
         <div>您选择了{{count}}次了</div>
+        <span style="color:red">复杂的事件</span>放在methods中每次选择counter+1
     </div>
     <br><br>
 
 
 
-    <div id="my_cl">
+    <div id="my_cl" style="background:rosybrown">
         <button @click='counter+=1'>点一下加一次</button>
         <p>您一共点击了{{counter}}次</p>
+        <span style="color:red">简单的事件</span>将按钮与事件绑定,每次点击触发事件使counter+1
     </div>
-    将按钮与事件绑定,每次点击触发事件使counter+1
+
 
 
 

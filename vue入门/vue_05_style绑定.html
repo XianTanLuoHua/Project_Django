@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script>
+    window.onload = function(){
+
+        var app_01 = new Vue({
+            el:'#app_01',
+            data:{
+                st_red:'red',
+                st_width:'200',
+                st_height:'200',
+                bg:'green'
+            }
+        })
+
+        var app_02 = new Vue({
+            el:'#app_02',
+            data:{
+                sty:{
+                    color:'green',
+                    width:'200px',
+                    height:'200px',
+                    background:'red'}
+            }
+        })
+
+        var app_03 = new Vue({
+            el:'#app_03',
+            data:{
+                st1:{
+                    color:'green',
+                    width:'200px',
+                },
+                st2:{
+                    height:'200px',
+                    background:'red'
+                }
+            }
+        })
+
+    }
+    </script>
+</head>
+
+<body>
+
+    <div id="app_01" >
+        <div v-bind:style="{color:st_red,width:st_width+'px',height:st_height+'px',background:bg}">
+            通过v-bind给绑定style属性
+        </div>
+    </div>
+    <br>
+
+    <div id="app_02">
+        <div v-bind:style=sty>
+            通过给v-bind绑定的属性style传入一个带有样式的对象sty来修改样式
+        </div>
+    </div>
+    <br>
+
+    <div id="app_03">
+        <div v-bind:style='[st1,st2]'>
+            这是给style传入了一个list,list中内包含了两个包含了样式的对象
+        </div>
+    </div>
+
+
+
+</body>
+</html>

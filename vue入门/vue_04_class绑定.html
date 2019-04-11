@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .basic{
+            color: #27af23;
+        }
+        .red_box{
+            background: rgb(245, 0, 0);
+        }
+        .daxiao{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            var app_01 = new Vue({
+                el:'#app_01',
+                data:{
+                    is_ture:true,
+                    is_flase:false
+                }
+            })
+
+
+            var app_02 = new Vue({
+                el:'#app_02',
+                data:{ 
+                    sty:{
+                    red_box:true,
+                    daxiao:true,
+                    }
+                }
+            })
+
+
+            var app_03 = new Vue({
+                el:'#app_03',
+                data:{
+                    st1:'red_box',
+                    st2:"daxiao",
+                    st3:"basic"
+                }
+            })
+
+
+            var appp_04 = new Vue({
+                el:'app_04',
+                data:{
+                    is_ture:true,
+                }
+            })
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="app_01">
+        <div class="basic" v-bind:class='{daxiao:is_ture,red_box:is_ture}'>
+            绑定class属性,class内部的元素可以用布尔值布尔值控制            
+        </div>
+    </div>
+    <br>
+
+    <div id="app_02">
+        <div v-bind:class='sty'>
+            绑定class属性  class内部可以传入一个sty对象
+        </div>
+    </div>
+    <br>
+
+    <div id="app_03">
+        <div v-bind:class='[st1,st2,st3]'>
+            这是使用一个列表绑定的
+        </div>
+    </div>
+    <br>
+
+    <div id="app_04"> 未完成
+        <div class='red_box' v-bind:class="[is_ture ? basic:'',daxiao]">
+            使用三元运算进行控制
+        </div>
+    </div>
+    
+</body>
+</html>

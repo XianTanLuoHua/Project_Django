@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <script>
+        window.onload = function(){
+            var app_01 = new Vue({
+                el:'#app_01',
+                data:{
+                    message:''
+                    },
+                methods:{
+                    func_1:axios.post("http://127.0.0.1:8800", {
+                        firstName: 'Fred',
+                        lastName: 'Flintstone'
+                        })
+                        .then(function (response) {
+                         console.log(response);
+                        })
+                        .catch(function (error) {
+                         console.log(error);
+                        })                 
+
+                }
+
+            })
+
+
+        }
+        
+    </script>
+</head>
+<body>
+
+
+    <div id="app_01">
+        <input v-model='message' @click='func_1'>
+
+
+
+    </div>
+    
+</body>
+</html>
