@@ -20,26 +20,22 @@
                         lastName: 'Flintstone'
                         })
                         .then(function (response) {
-                         console.log(response);
+                         app_01.message=response['k'];
                         })
                         .catch(function (error) {
                          console.log(error);
                         })                 
-
                 }
 
             })
-
-
         }
         
     </script>
 </head>
 <body>
 
-
     <div id="app_01">
-        <input v-model='message' @click='func_1'>
+        <input v-model='message' @change='func_1'>
 
 
 

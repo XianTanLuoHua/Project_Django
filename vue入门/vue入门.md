@@ -60,6 +60,10 @@ vue中使用k:v的方式来绑定属性或方法
 
 ## 表单绑定 案例vue_07
 
+### 过滤器
+
+	用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式
+
 ## 实例的生命周期:
 
 	    实例化前 beforeCreate
@@ -71,7 +75,7 @@ vue中使用k:v的方式来绑定属性或方法
 	    摧毁前   beforebestroy
 	    摧毁后   bestroyed
 
-## 数据的交互: 案例dome-axios
+## 数据的交互: 案例dome-axios  (未实现)
 
 ​	    由于Vue中没有ajax请求所以vue.js没有集成 ajax 功能,要使用ajax功能可以使用vue官方推荐的axios.js库来做ajax的交互
 
