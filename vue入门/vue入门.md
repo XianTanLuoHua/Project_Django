@@ -75,13 +75,16 @@ vue中使用k:v的方式来绑定属性或方法
 	    摧毁前   beforebestroy
 	    摧毁后   bestroyed
 
+
 ## 数据的交互: 案例dome-axios  (未实现)
 
 ​	    由于Vue中没有ajax请求所以vue.js没有集成 ajax 功能,要使用ajax功能可以使用vue官方推荐的axios.js库来做ajax的交互
-
+		异步的axios中的this不是当前的Vue对象
 ​	    .then表示接收成功
 	    .catch表示接收失败  
 
 ```
 
 ```
+
+事件处理

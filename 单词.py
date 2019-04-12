@@ -272,3 +272,6 @@ origin 远端
 then 然后
 response 响应
 mount 挂载
+controller 控制器
+redirect
+template 模板
