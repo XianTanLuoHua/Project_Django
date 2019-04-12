@@ -258,7 +258,7 @@ field 属性
 flush 冲刷 冲洗
 parse 解析
 replicas 复制 复制品
-mastar 主
+master 主
 status 状态
 commit 提交
 push 增加 推送
@@ -273,5 +273,10 @@ then 然后
 response 响应
 mount 挂载
 controller 控制器
-redirect
+model 模型
+view 视图
 template 模板
+redirect 重定向
+application 应用
+session 会话
+patterns 模式

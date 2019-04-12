@@ -13,20 +13,19 @@
                 el:'#app_01',
                 data:{
                     message:''
-                    },
+                        },
                 methods:{
-                    func_1:axios.post("http://127.0.0.1:8800", {
+                    func_1:axios.post("http://127.0.0.1:8000", {
                         firstName: 'Fred',
                         lastName: 'Flintstone'
                         })
                         .then(function (response) {
-                         app_01.message=response['k'];
+                         app_01.msg=response['k'];
                         })
                         .catch(function (error) {
                          console.log(error);
                         })                 
                 }
-
             })
         }
         

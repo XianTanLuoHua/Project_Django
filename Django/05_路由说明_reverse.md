@@ -71,7 +71,7 @@ urlpatterns = [
 ]
 ```
 
-## 3. 路由命名与reverse反解析（逆向）
+## 3. 路由命名空间与reverse反解析（逆向）
 
 > 在视图函数中, 我们可以根据reverse进行反解析,获取当前视图函数的路径. 如：
 
@@ -88,9 +88,9 @@ def say(request):
     return HttpResponse('say')
 ```
 
-**总路由可以使用namespace='别名'设置别名,路由使用name='别名设置别名'**
+**总路由可以使用namespace='别名'设置别名,子应用路由使用name='别名设置别名'**
 
-	reverse(命名空间namespace:路由name)
+	a=reverse(命名空间namespace:路由name) #得到路径
 
 **如果总路由没有设置别名可以通过`reverse(路由name)`得到的路径,**
 
