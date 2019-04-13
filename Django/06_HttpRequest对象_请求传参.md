@@ -2,7 +2,7 @@
 
 ## 1.HttpRequest
 
-> 服务器接收到http请求后会根据报文创建HttpRequest
+> 服务器接收到http请求后会根据报文创建HttpRequest对象
 > 视图的第一个参数就是HttpRequest对象
 > 由Django创建之后调用视图是传递给视图
 > 视图接收到的第一个参数就是HttpRequest
@@ -21,18 +21,21 @@
 > GET:类似字典的对象包含了GET请求的所有参数
 > POST:类似字典的对象包含了POST请求的所有的参数
 
+	通过客户发起请求的HttpRequest对象得到.
 	get():根据键获取值,只能获取一个
+		客户访问http://127.0.0.1:8000/index_08/?a=1&b=2
+		服务器得到 print(request.GET.get('a'),request.GET.get('b')) 打印
 	getlist():将键的值以列表的形式返回,可以获取多个
+		客户访问http://127.0.0.1:8000/index_08/?a=1&b=2&a=3&b=4
+		服务器的到print(request.GET.getlist('a'),request.GET.getlist('b'))
 
 ### 1.2HttpRequest方法
 
-	is_ajax():如果是通过ajax发起的则为true
+	is_ajax():如果是通过ajax发起的请求,则为true
 
 
 
 ## 2.http向服务器传参的方式
-
-
 
 > 请求体（body）中发送的数据，比如表单数据、json、xml；
 > 通过查询字符串
@@ -61,5 +64,12 @@ print(request.path)打印客户端发来的请求
 	2.http://127.0.0.1:8000/index_02/aaa/1234/
 	3.在views中响应的函数中 print(year,day) 打印aaa,1234将按照关键字参数方式传入
 
+### 2.通过查询字符串传参
 
-### 2.通过查询字符串传参(未完成)
+	通过客户发起请求的HttpRequest对象得到.
+	get():根据键获取值,只能获取一个
+		客户访问http://127.0.0.1:8000/index_08/?a=1&b=2
+		服务器得到 print(request.GET.get('a'),request.GET.get('b')) 打印
+	getlist():将键的值以列表的形式返回,可以获取多个
+		客户访问http://127.0.0.1:8000/index_08/?a=1&b=2&a=3&b=4
+		服务器的到print(request.GET.getlist('a'),request.GET.getlist('b'))
