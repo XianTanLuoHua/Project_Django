@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            /*给指定选择器设定delegate(代理的子类,事件,事件发生后的功能) */
+            $('#list').delegate('li', 'click', function () {
+                $(this).html('被点击了')
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+
+
+</ul>
+
+</body>
+</html>

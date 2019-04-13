@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#input01").blur(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:8080",
+                    method:'POST',
+                    data:{'name':$(this).val()},
+                    dataType:"JSON",
+                    success: function (data) {
+                        console.log('成功');
+                        console.log(data.name)
+
+                    },
+                    error: function (data) {
+                        console.log('失败');
+
+                    },
+                    async:true
+                })
+
+
+            ;alert('hahaha')
+            });
+
+        });
+        
+        
+
+
+    </script>
+</head>
+<body>
+<form action="http://127.0.0.1:8080" method="post">
+    <div>
+        <label>用户:<input type="text" name="user" id="input01"></label>
+    </div>
+
+    <div>
+        <label>密码:<input type="password" name="pwd" id="pwd01"></label>
+    </div>
+    <input type="submit" value="提交一下">
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

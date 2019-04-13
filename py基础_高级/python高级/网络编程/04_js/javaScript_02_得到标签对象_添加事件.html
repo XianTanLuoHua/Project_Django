@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+
+        window.onload = function () {             /*window.onload = function表示页面加载完毕后执行的函数体*/
+        var a = document.getElementById('bu1');  /*得到标签的对象 操作对象达到操作标签的目的*/
+        console.log(a);                         /*控制台来打印输出a发现a包含id为bu1的全部属性*/
+
+        function func1() {
+            alert('你还真点啊')
+        }
+
+        a.onclick = func1
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+<div>
+    <input type='button' id="bu1" name="按钮" value="按一下试试">
+</div>
+
+</body>
+</html>

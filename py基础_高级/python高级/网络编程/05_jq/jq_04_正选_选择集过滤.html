@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+
+        $(function () {
+            var $a = $('div').has('#mytext')   /* 选择div标签中拥有mytext这个id的标签*/
+            $a.css({'background':'red'})
+
+
+            var $b = $('div').eq(1)    /*选择div标签中的下标为1的标签*/
+            $b.css({'background':"green"})
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div>
+    这是第一个div
+    <input type="text" id="mytext">
+</div>
+
+<div>
+    这是第二个div
+    <input type="text">
+    <input type="button">
+</div>
+
+</body>
+</html>

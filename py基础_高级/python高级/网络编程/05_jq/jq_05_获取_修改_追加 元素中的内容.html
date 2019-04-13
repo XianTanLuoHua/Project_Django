@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+
+            alert($("#01"))
+            $("#01").html("你就知道")  /*修改指定标签的内容 之前的内容会被清除*/
+            $("#01").append("<span style='color:red'>追加一个span标签</span>")
+
+
+        });
+    </script>
+</head>
+<body>
+
+<a href="http://www.baidu.com" id="01">百度一下</a>
+
+</body>
+</html>

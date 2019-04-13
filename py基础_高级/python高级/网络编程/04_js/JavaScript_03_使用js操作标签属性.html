@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作标签属性</title>
+    <style>
+        .red{
+            background: #e4c579;
+
+        }
+    </style>
+    
+    
+    <script>
+
+
+        function func_01() {  /*页面加载完毕之后会执行这段代码*/
+            div_obj = document.getElementById('div01');
+
+            var vaule = div_obj.value; /*得到div对象里面的vaule*/
+            console.log(vaule);
+
+            var name = div_obj.name; /*得到对象的name*/
+            console.log(name);
+
+            div_obj.className = 'red';  /*加载完毕之后通过标签的对象修改标签使用的选择器*/
+            div_obj.style.background = "#353535"; /*这个是行内式 优先级大于内嵌内嵌式 所以变成了灰色*/
+
+            div_obj.style.width = '200px';      /*修改标签的宽度*/
+            div_obj.style.height = '200px';     /*修改标签的高度*/
+            div_obj.style.color = '#e45678';    /*修改标签内文本的颜色*/
+            div_obj.style.textAlign = 'center'; /*通过得到的对象修改标签中文本的位置*/
+            div_obj.style.lineHeight = '200px';
+            div_obj.onclick = hit
+
+        }
+
+        function hit() {
+
+            div_obj.innerHTML = '我是通过innerHTML被修改的'
+        }
+
+        window.onload = function () {   /*设置页面加载完毕之后执行的功能*/
+            func_01()
+        };
+    </script>
+</head>
+<body>
+<div>
+    <textarea id="div01">这是一个标签</textarea>
+    <input type="button" name="test" value="点一下试试" onclick="hit()">
+
+
+
+
+</div>
+</body>
+</html>

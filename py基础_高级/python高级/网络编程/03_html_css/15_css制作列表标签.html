@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格与列表标签</title>
+</head>
+<body>
+
+<h1>改变列表标签显示方式</h1>
+
+<h2>使用display</h2>
+<h4>display:inline只是让块标签li变成了内联标签,内联标签不能设置宽高</h4>
+<ul>
+    <li style="width: 80px;height: 30px;background: #c17b9d;display: inline;">女装</li>
+    <li style="width: 80px;height: 30px;background: #c13c0d;display: inline;">男装</li>
+    <li style="width: 80px;height: 30px;background: #316dc1;display: inline;">童装</li>
+    <li>上面这是通过display:inline改变了列表标签的显示方式但是不能设置每个列表的大小</li>
+</ul>
+<h4>display:inline-block</h4>
+    <ul>
+    <li style="width: 80px;height: 30px;background: #c17b9d;display: inline-block;text-align: center;">女装</li>
+    <li style="width: 80px;height: 30px;background: #c13c0d;display: inline-block;text-align: center;">男装</li>
+    <li style="width: 80px;height: 30px;background: #316dc1;display: inline-block;text-align: center;">童装</li>
+    <li>使用inline-block让这个变成了拥有块和内联的属性</li></ul>
+
+
+<h2>使用浮动</h2>
+<ul>
+    <li style="width: 50px;height: 30px;background: #c17b9d;float: left;overflow: hidden;">女装</li>
+    <li style="width: 50px;height: 30px;background: #c13c0d;float: left;overflow: hidden">男装</li>
+    <li style="width: 50px;height: 30px;background: #316dc1;float: left;overflow: visible">童装</li>
+    <li>这是通过浮动来让列表标签改变显示方式 <h4 style="display: inline;">有bug</h4></li>
+
+
+<h2>
+    使用list-style:
+</h2>
+
+<ul style="list-style: square inside">这是一个列表square表示使用正方形符号,inside表示符号在内侧
+    <li >哈哈哈</li>
+    <li >哈哈哈</li>
+    <li >哈哈哈</li>
+    <li >哈哈哈</li>
+    <li >哈哈哈</li>
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</body>
+</html>

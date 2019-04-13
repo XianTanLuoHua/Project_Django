@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .greens {
+            background: #be2a51;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        function func1() {
+            func2()
+        }
+        function func2() {
+            var a = document.getElementById('div_01');
+            // a.className = 'greens'; 下面已经修改了这句话需要注释掉
+
+
+            a.innerHTML = '<div>我变绿了啊</div>';
+            a.style.width = '200px';
+            a.style.height = '200px';
+            a.style.background = '#00be32'
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" name="hit" value="点击变换" onclick="func1()"> <!--点击之后onlick调用func1的方法然后执行func1中的func2-->
+<div id="div_01">
+    哈哈哈哈啊
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交练习</title>
+</head>
+<body>
+
+<form action="http://127.0.0.1:8800/" method="post">
+<h1>请登录</h1>
+<p>
+    <label>User_name:</label><input type="text" name="user_name" value="">
+</p>
+<p>
+    <label>PassWord</label><input type="password" name="password" value="">
+</p>
+<p>
+    <label>性别</label>
+    <label ><input type="radio" name="sex" value="man_sex" id="0">man</label>
+    <label ><input type="radio" name="sex" value="woman_sex" id="1">woman</label><br>
+    通过id可以绑定一些语句
+    <ul><li><label for="0">点击这里选择man</label></li></ul>
+    <ul><li><label for="1">点击这里选择woman</label></li></ul>
+
+</p>
+
+<p>
+    <label>爱好</label>
+    <label><input type="checkbox" name="hobby" value="qiu">打球</label>
+    <label><input type='checkbox' name="hobby" value="nv">追女</label>
+    <label><input type="checkbox" name="hobby" value="sun">跑步</label>
+</p>
+
+<p>
+    <label>个人描述:<textarea name="texts" ></textarea></label>
+</p>
+
+<p>
+    <label >上传头像: <input type="file" name="photo" value=""></label>
+</p>
+<p>
+    <label>地址:
+    <select name="map">
+        <option value="sh">上海</option>
+        <option value="bj">北京</option>
+
+    </select></label>
+</p>
+    <input type="submit" value="提交一下">
+    <input type="reset" value="点击重置">
+</form>
+
+
+</body>
+</html>

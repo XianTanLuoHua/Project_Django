@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#01").change(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:8800",
+                    method: "post",
+                    data:{"kw":$(this).val()},
+                    dataType: "JSON",
+                    success: function (data) {
+                        console.log(data);
+                        // var a = JSON.parse(data);
+                        // console.log(a);
+                        $("#02").html(data['k'])
+                    },
+                    error: function (data) {
+                        console.log('失败');
+                        console.log(data);
+                    },
+                    async:true
+                });
+        });
+        });
+
+    </script>
+
+</head>
+<body>
+
+<input type="text" id="01">
+<div id="02" style="width: 500px;height: 500px;background: #aec785;display: inline-block" >等待翻译</div>
+
+
+</body>
+</html>

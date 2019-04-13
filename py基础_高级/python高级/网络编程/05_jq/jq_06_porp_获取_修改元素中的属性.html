@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            $(function () {
+                var a = $('#01')
+                console.log(a.prop('type')); /*在控制台打印元素中指定的属性*/
+
+                a.prop({'value':'通过prop被改变了'}) /*通过prop改变a内已存在的键值对*/
+
+                a.prop({'style':"background:red"}) /*通过prop添加a内没有的属性
+                                                    key为style 属性为"background:red"*/
+
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<input type="text" id="01" value="这是原生的">
+
+
+</body>
+</html>

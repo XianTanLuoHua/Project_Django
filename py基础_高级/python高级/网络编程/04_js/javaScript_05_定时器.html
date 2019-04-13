@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div_change {
+            width: 200px;
+            height: 200px;
+            background: #8ce012;
+        }
+        input {
+            margin: auto;
+        }
+    </style>
+    <script>
+        function func1() {
+            var div_01 = document.getElementById('div1');
+            div_01.className = 'div_change' /*设置点击按钮之后把div_01的选择器类改变为指定的类*/
+        }
+        var move_lenght = 1; /*每次移动的距离*/
+        var move_vaule = 0; /*初始值*/
+        function func2() {
+            move_vaule = move_lenght + move_vaule;
+            var div_01 = document.getElementById('div1');
+            div_01.style.marginLeft = move_vaule+ 'px';
+        }
+        function func3() { /*这个函数设定了定时器*/
+             a =setInterval(func2, 100);
+             // var a =setInterval(func2, 100);
+
+        }
+        function func4() {
+            console.log(a);
+            clearInterval(a)
+        }
+    </script>
+</head>
+<body>
+
+    <div id="div1">哈哈</div>
+    <input type="button" name="test" value="点击等待变色哦" onclick="setTimeout(func1,200)"><!-- 设定定时器点击按钮后200ms 启动函数-->
+    <input type="button" name="test" value="向右边移动啦" onclick="func3()"> <!--通过函数 调用 设定好的重复使用的定时器-->
+    <input type="button" value="停止" onclick="func4( )">
+</body>
+</html>

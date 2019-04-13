@@ -1,0 +1,4 @@
+#input是等待输入的函数
+a = int(input('请输入你心中的数字:'))
+
+print('您刚才输入的是',a,type(a))

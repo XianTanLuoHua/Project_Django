@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+
+            // $('#01').click(function () {
+            //     $(this).prop({'style':"background:red",'value':'被点击了'})
+            // });
+
+            $("#01").focus(function () {
+                $(this).prop({'style':'background:green','value':'得到的焦距准备输入了'})
+
+            });
+
+            $("#01").blur(function () {
+                $(this).prop({'value':'点击到外面了'})
+
+            });
+
+            $('#01').mouseout(function () {
+                $(this).prop({'value':'鼠标划出去了'})
+
+            });
+            $("#01").mouseenter(function () {
+                $(this).prop({"value":'鼠标划进来了'})
+
+            });
+
+
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<input type="text" value="鼠标放上来试试" id="01">
+
+
+</body>
+</html>

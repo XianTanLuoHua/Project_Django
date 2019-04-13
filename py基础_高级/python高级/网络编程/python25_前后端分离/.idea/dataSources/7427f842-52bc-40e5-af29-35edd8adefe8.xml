@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="stock_db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="stock_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="jing_dong"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="p24"/>
+    <schema id="7" parent="1" name="p25"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="python20"/>
+    <schema id="10" parent="1" name="python212"/>
+    <schema id="11" parent="1" name="python22_new"/>
+    <schema id="12" parent="1" name="python25"/>
+    <schema id="13" parent="1" name="python_1"/>
+    <schema id="14" parent="1" name="python_test_1"/>
+    <schema id="15" parent="1" name="sys"/>
+    <table id="16" parent="2" name="focus"/>
+    <table id="17" parent="2" name="info"/>
+    <column id="18" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="16" name="note_info">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="20" parent="16" name="info_id">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+    </column>
+    <index id="21" parent="16" name="info_id">
+      <ColNames>info_id</ColNames>
+    </index>
+    <key id="22" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="23" parent="16" name="focus_ibfk_1">
+      <ColNames>info_id</ColNames>
+      <RefSchemaName>stock_db</RefSchemaName>
+      <RefTableName>info</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="24" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="17" name="code">
+      <Position>2</Position>
+      <Comment>股票代码</Comment>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="17" name="short">
+      <Position>3</Position>
+      <Comment>股票简称</Comment>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="17" name="chg">
+      <Position>4</Position>
+      <Comment>涨跌幅</Comment>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="17" name="turnover">
+      <Position>5</Position>
+      <Comment>换手率</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="17" name="price">
+      <Position>6</Position>
+      <Comment>最新价</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="17" name="highs">
+      <Position>7</Position>
+      <Comment>前期高点</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="17" name="time">
+      <Position>8</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <key id="32" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

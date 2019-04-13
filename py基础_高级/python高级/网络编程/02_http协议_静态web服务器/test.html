@@ -1,0 +1,300 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Python3萌新入门笔记 &#8211; 魔力Python</title>
+<script>
+window._deel = {
+    name: '魔力Python',
+    url: 'http://www.opython.com/wp-content/themes/D8',
+    rss: '',
+    ajaxpager: 'on',
+    maillist: '',
+    maillistCode: '',
+    commenton: 0,
+    roll: [2,1],
+    tougaoContentmin: 200,
+    tougaoContentmax: 5000,
+    appkey: {
+    	tqq: '801494063',
+    	tsina: '1106777879',
+    	t163: '',
+    	tsohu: ''
+    }
+}
+</script>
+<link rel='dns-prefetch' href='//push.zhanzhang.baidu.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//www.opython.com' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.opython.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.7"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='style-css'  href='http://www.opython.com/wp-content/themes/D8/style.css?ver=3.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.opython.com/wp-content/themes/D8/js/jquery.js?ver=3.0'></script>
+<link rel='https://api.w.org/' href='http://www.opython.com/wp-json/' />
+<link rel="canonical" href="http://www.opython.com/python3" />
+<link rel='shortlink' href='http://www.opython.com/?p=629' />
+<link rel="alternate" type="application/json+oembed" href="http://www.opython.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.opython.com%2Fpython3" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.opython.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.opython.com%2Fpython3&#038;format=xml" />
+<meta name='description' content='前言：我的Python3萌新入门笔记 一、交互式环境与print输出 二、变量的使用 三、字符串的操作 1、连接/获取长度/截取 2、重复/转换/替换/原始字符串 3、去除/查询/计数 4、获取输入/格式化 四、数据结构 1、元组 2、列表 ...' />
+<meta name='robots' content='index,follow' />
+<meta name="keywords" content="Python3萌新入门笔记">
+<meta name="description" content="前言：我的Python3萌新入门笔记  	一、交互式环境与print输出  	二、变量的使用  	三、字符串的操作  	1、连接/获取长度/截取  	2、重复/转换/替换/原始字符串  	3、去除/查询/计数  	4、获取输入/格式化  	四、数据结构  	1、元组  	2、列表  	3、集合  	4、字典  	五、循环与条件  	1、循环  	2、条件/跳出与结束循环  	六、运算符与随机数  	七、关键字  	八、内置函数  	1、">
+<style>.article-content{font-size: 16px;line-height:27px;}.article-content p{margin:20px 0;}@media (max-width:640px){.article-content{font-size:16px}}body{margin-top: 52px}.navbar-wrap{position:fixed}@media (max-width: 979px){body{margin-top: 0}.navbar-wrap{position:relative}}</style><!--[if lt IE 9]><script src="http://www.opython.com/wp-content/themes/D8/js/html5.js"></script><![endif]-->
+<script src="//msite.baidu.com/sdk/c.js?appid=1588752392037904"></script>            
+</head>
+<body class="page-template page-template-pages page-template-page page-template-pagespage-php page page-id-629">
+<div class="navbar-wrap">
+<div class="navbar">
+		<div class="logo"><a href="http://www.opython.com" title="魔力Python-&gt;&gt;&gt;面向新手入门的Python教程与Pycharm教程">魔力Python</a></div>
+		<ul class="nav">
+			<li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="http://opython.com">首页</a></li>
+<li id="menu-item-923" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children menu-item-923"><a href="http://www.opython.com/python3">学习目录</a>
+<ul  class="sub-menu">
+	<li id="menu-item-922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-629 current_page_item menu-item-922"><a href="http://www.opython.com/python3">Python3入门笔记</a></li>
+	<li id="menu-item-1438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1438"><a href="http://www.opython.com/python_project">Python3练习项目</a></li>
+	<li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1639"><a href="http://www.opython.com/interpreter">写个简单的解释器</a></li>
+	<li id="menu-item-921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-921"><a href="http://www.opython.com/django2">Django2入门笔记</a></li>
+	<li id="menu-item-1437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1437"><a href="http://www.opython.com/django2_blog">Django2博客项目</a></li>
+</ul>
+</li>
+<li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-34"><a href="http://opython.com/#">Python</a>
+<ul  class="sub-menu">
+	<li id="menu-item-484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-484"><a target="_blank" href="http://www.opython.com/tag/python-built-in-function">内置函数</a></li>
+	<li id="menu-item-485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-485"><a target="_blank" href="http://www.opython.com/tag/python3-built-in-module">内置模块</a></li>
+</ul>
+</li>
+<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-35"><a href="http://opython.com/#">Pycharm</a>
+<ul  class="sub-menu">
+	<li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a target="_blank" href="http://www.opython.com/24.html">快捷键</a></li>
+	<li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-551"><a target="_blank" href="http://www.opython.com/523.html">安装卸载库</a></li>
+</ul>
+</li>
+<li id="menu-item-39" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-39"><a href="http://opython.com/#">下载</a>
+<ul  class="sub-menu">
+	<li id="menu-item-482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-482"><a href="http://opython.com/#">Python</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-476"><a target="_blank" href="https://www.python.org/downloads/windows/">Windows</a></li>
+		<li id="menu-item-478" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-478"><a target="_blank" href="https://www.python.org/downloads/mac-osx/">Mac OS X</a></li>
+		<li id="menu-item-477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-477"><a target="_blank" href="https://www.python.org/downloads/source/">Linux/UNIX</a></li>
+	</ul>
+</li>
+	<li id="menu-item-483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-483"><a href="http://opython.com/#">PyCharm社区版</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-480"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&#038;code=PCC">Windows</a></li>
+		<li id="menu-item-479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-479"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac&#038;code=PCC">Mac OS X</a></li>
+		<li id="menu-item-481" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-481"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&#038;code=PCC">Linux/UNIX</a></li>
+	</ul>
+</li>
+	<li id="menu-item-857" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-857"><a href="http://opython.com/#">PyCharm专业版</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-856"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows">Windows</a></li>
+		<li id="menu-item-858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-858"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac">Mac OS X</a></li>
+		<li id="menu-item-859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-859"><a target="_blank" href="https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux">Linux/UNIX</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a target="_blank" href="https://dev.mysql.com/downloads/mysql/">MySQL</a></li>
+	<li id="menu-item-1120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1120"><a target="_blank" href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows">PostgreSQL</a></li>
+</ul>
+</li>
+<li id="menu-item-1116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1116"><a href="http://opython.com/#">安装</a>
+<ul  class="sub-menu">
+	<li id="menu-item-486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-486"><a target="_blank" href="http://www.opython.com/77.html">Python</a></li>
+	<li id="menu-item-487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-487"><a target="_blank" href="http://www.opython.com/89.html">PyCharm</a></li>
+	<li id="menu-item-1117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1117"><a href="http://opython.com/#">MySQL</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-1345" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1345"><a target="_blank" href="http://www.opython.com/1346.html">CentOS</a></li>
+		<li id="menu-item-1343" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1343"><a target="_blank" href="http://www.opython.com/1105.html">Ubuntu</a></li>
+		<li id="menu-item-1344" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1344"><a target="_blank" href="http://www.opython.com/1340.html">Windows</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1118"><a target="_blank" href="http://www.opython.com/766.html">PostgreSQL</a></li>
+</ul>
+</li>
+<li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1135"><a href="http://opython.com/#">环境部署</a>
+<ul  class="sub-menu">
+	<li id="menu-item-1136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1136"><a href="http://opython.com/#">Ubuntu</a>
+	<ul  class="sub-menu">
+		<li id="menu-item-1139" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1139"><a target="_blank" href="http://www.opython.com/1019.html">Apache（上）</a></li>
+		<li id="menu-item-1140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1140"><a target="_blank" href="http://www.opython.com/1027.html">Apache（下）</a></li>
+		<li id="menu-item-1141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1141"><a target="_blank" href="http://www.opython.com/1069.html">Nginx</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1143"><a target="_blank" href="http://www.opython.com/1134.html">CentOS+Nginx</a></li>
+	<li id="menu-item-1138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1138"><a target="_blank" href="http://www.opython.com/1043.html">Windows+IIS</a></li>
+</ul>
+</li>
+<li id="menu-item-637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-637"><a href="http://opython.com/#">官方文档</a>
+<ul  class="sub-menu">
+	<li id="menu-item-638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-638"><a target="_blank" href="https://docs.python.org/3.6/">Python</a></li>
+	<li id="menu-item-924" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-924"><a target="_blank" href="http://www.opython.com/files/docs/django2/">Django</a></li>
+	<li id="menu-item-704" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-704"><a target="_blank" href="https://www.jetbrains.com/help/pycharm/meet-pycharm.html">PyCharm</a></li>
+	<li id="menu-item-639" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-639"><a target="_blank" href="https://docs.wxpython.org/index.html">wxPython</a></li>
+</ul>
+</li>
+		</ul>
+		<div class="menu pull-right">
+			<form method="get" class="dropdown search-form" action="http://www.opython.com/" >
+				<input class="search-input" name="s" type="text" placeholder="输入关键字搜索" x-webkit-speech=""><input class="btn btn-success search-submit" type="submit" value="搜索">
+				<ul class="dropdown-menu search-suggest"></ul>
+			</form>
+			<div class="btn-group pull-left">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>
+							</div>
+		</div>
+</div>
+</div>
+<header class="header">
+	<div class="speedbar">
+					<div class="pull-right">
+				<i class="icon-user icon12"></i> <a href="http://www.opython.com/wp-login.php">登录</a>			</div>
+				<div class="toptip"><strong class="text-success">最新消息：</strong>欢迎光临 魔力 • Python！大家可以点开导航菜单中的【学习目录】，这个目录类似图书目录，更加方便学习！</div>
+	</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1953598699433675",
+          enable_page_level_ads: true
+     });
+</script>
+</header>
+<section class="container">
+	
+<div class="pagewrapper clearfix">
+	<aside class="pagesidebar">
+		<ul class="pagesider-menu">
+			
+<li class="page_item page-item-629 current_page_item"><a href="http://www.opython.com/python3">Python3萌新入门笔记</a></li>
+<li class="page_item page-item-1636"><a href="http://www.opython.com/interpreter">一起写个简单的解释器</a></li>
+<li class="page_item page-item-671"><a href="http://www.opython.com/python_project">Python3萌新练习项目</a></li>
+<li class="page_item page-item-900"><a href="http://www.opython.com/django2">Django2萌新入门笔记</a></li>
+<li class="page_item page-item-1261"><a href="http://www.opython.com/django2_blog">Django2个人博客项目</a></li>
+
+		</ul>
+	</aside>
+	<div class="pagecontent">
+		<header class="pageheader clearfix">
+			<h1 class="pull-left">
+				<a href="http://www.opython.com/python3">Python3萌新入门笔记</a>
+			</h1>
+			<div class="pull-right">
+				<div class="share"><h5>分享到 </h5><div class="bdsharebuttonbox"><a class="bds_qzone" data-cmd="qzone"></a><a class="bds_tsina" data-cmd="tsina"></a><a class="bds_weixin" data-cmd="weixin"></a><a class="bds_tqq" data-cmd="tqq"></a><a class="bds_sqq" data-cmd="sqq"></a><a class="bds_renren" data-cmd="renren"></a><a class="bds_t163" data-cmd="t163"></a><a class="bds_tsohu" data-cmd="tsohu"></a><a class="bds_baidu" data-cmd="baidu"></a><a class="bds_douban" data-cmd="douban"></a><a class="bds_bdhome" data-cmd="bdhome"></a><a class="bds_youdao" data-cmd="youdao"></a><a class="bds_fbook" data-cmd="fbook"></a><a class="bds_twi" data-cmd="twi"></a><a class="bds_more" data-cmd="more"></a><a class="bds_count" data-cmd="count"></a></div></div>			</div>
+		</header>
+					<div class="article-content">
+				<dl>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/640.html" target="_blank" rel="noopener">前言：我的Python3萌新入门笔记</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/107.html" target="_blank" rel="noopener">一、交互式环境与print输出</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/116.html" target="_blank" rel="noopener">二、变量的使用</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/121.html" target="_blank" rel="noopener">三、字符串的操作</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/121.html" target="_blank" rel="noopener">1、连接/获取长度/截取</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/143.html" target="_blank" rel="noopener">2、重复/转换/替换/原始字符串</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/176.html" target="_blank" rel="noopener">3、去除/查询/计数</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/189.html" target="_blank" rel="noopener">4、获取输入/格式化</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/198.html" target="_blank" rel="noopener">四、数据结构</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/198.html" target="_blank" rel="noopener">1、元组</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/213.html" target="_blank" rel="noopener">2、列表</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/217.html" target="_blank" rel="noopener">3、集合</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/225.html" target="_blank" rel="noopener">4、字典</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/234.html" target="_blank" rel="noopener">五、循环与条件</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/234.html" target="_blank" rel="noopener">1、循环</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/252.html" target="_blank" rel="noopener">2、条件/跳出与结束循环</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/269.html" target="_blank" rel="noopener">六、运算符与随机数</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/274.html" target="_blank" rel="noopener">七、关键字</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/278.html" target="_blank" rel="noopener">八、内置函数</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/278.html" target="_blank" rel="noopener">1、内置函数（A-F）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/282.html" target="_blank" rel="noopener">2、内置函数（G-O）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/285.html" target="_blank" rel="noopener">3、内置函数（P-Z）</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/297.html" target="_blank" rel="noopener">九、自定义函数</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/297.html" target="_blank" rel="noopener">1、定义函数与设定参数</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/310.html" target="_blank" rel="noopener">2、设定收集参数</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/314.html" target="_blank" rel="noopener">3、嵌套函数/作用域/闭包</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/327.html" target="_blank" rel="noopener">4、递归函数</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/343.html" target="_blank" rel="noopener">5、列表推导式/lambda表达式</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/350.html" target="_blank" rel="noopener">十、正则表达式</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/352.html" target="_blank" rel="noopener">十一、补充内容</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/352.html" target="_blank" rel="noopener">1、变量赋值/数据类型/转义字符</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/360.html" target="_blank" rel="noopener">2、字符串格式化/执行字符串语句</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/361.html" target="_blank" rel="noopener">十二、类</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/361.html" target="_blank" rel="noopener">1、创建/封装/特性/方法私有化</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/369.html" target="_blank" rel="noopener">2、命名空间/继承/关系检查</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/391.html" target="_blank" rel="noopener">3、多继承/检查对象特性/多态</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/392.html" target="_blank" rel="noopener">十三、面向对象与面向过程编程</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/393.html" target="_blank" rel="noopener">十四、异常处理</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/394.html" target="_blank" rel="noopener">十五、构造方法与属性</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/424.html" target="_blank" rel="noopener">十六、迭代器/生成器/装饰器</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/424.html" target="_blank" rel="noopener">1、迭代器与生成器</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/433.html" target="_blank" rel="noopener">2、解决八皇后问题</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/442.html" target="_blank" rel="noopener">3、装饰器</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/441.html" target="_blank" rel="noopener">十七、包与模块</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/441.html" target="_blank" rel="noopener">1、包与模块的使用</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/488.html" target="_blank" rel="noopener">2、模块组成/可用内容/帮助</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/490.html" target="_blank" rel="noopener">3、内置模块（sys/os）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/491.html" target="_blank" rel="noopener">4、内置模块（fileinput）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/492.html" target="_blank" rel="noopener">5、内置模块（glob/堆）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/493.html" target="_blank" rel="noopener">6、内置模块（collections/时间）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/521.html" target="_blank" rel="noopener">7、内置模块（math/random/持久化）</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/522.html" target="_blank" rel="noopener">8、内置模块（正则表达式）</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/524.html" target="_blank" rel="noopener">十八、图形界面（GUI）编程</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/524.html" target="_blank" rel="noopener">1、界面布局/尺寸器</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/525.html" target="_blank" rel="noopener">2、控件绑定函数</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/526.html" target="_blank" rel="noopener">十九、数据库</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/526.html" target="_blank" rel="noopener">1、使用SQLite</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/527.html" target="_blank" rel="noopener">2、SQL语句</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/528.html" target="_blank" rel="noopener">二十、进程/线程/协程</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/528.html" target="_blank" rel="noopener">1、进程</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/529.html" target="_blank" rel="noopener">2、线程</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/530.html" target="_blank" rel="noopener">3、协程</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/594.html" target="_blank" rel="noopener">二十一、网络编程</a></dt>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/594.html" target="_blank" rel="noopener">1、IP/TCP/UDP/Socket</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/598.html" target="_blank" rel="noopener">2、socket模块与select模块</a></dd>
+<dd><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/604.html" target="_blank" rel="noopener">3、urllib模块与HTMLParser类</a></dd>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/618.html" target="_blank" rel="noopener">二十二、配置/测试/日志</a></dt>
+<dt><a style="font-size: 14px; display: block; width: 360px; line-height: 30px; text-valign: center;" href="http://www.opython.com/623.html" target="_blank" rel="noopener">二十三、打包程序</a></dt>
+</dl>
+			</div>
+			</div>
+</div>
+
+</section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+            版权所有，保留一切权利！ &copy; 2019 <a href="http://www.opython.com">魔力Python</a>　Theme <a href="http://themebetter.com/" target="_blank">D8 by themebetter</a>
+        </div>
+        <div class="trackcode pull-right">
+            <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6d111c2591677d73f033913b0dea7ed8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>        </div>
+    </div>
+</footer>
+<script type='text/javascript' src='//push.zhanzhang.baidu.com/push.js?ver=4.8.7'></script>
+<script type='text/javascript' src='http://www.opython.com/wp-includes/js/wp-embed.min.js?ver=4.8.7'></script>
+</body>
+</html>
+<!-- Dynamic page generated in 0.468 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-03-24 12:09:12 -->
+
+<!-- super cache -->

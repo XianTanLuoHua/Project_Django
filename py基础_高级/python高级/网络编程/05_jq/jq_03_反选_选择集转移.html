@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div = $("#div01")
+            $div.prev().css({'background':'red'})  /*#修改div上面第一个*/
+            $div.prevAll().css({'text-indent':50}) /*#修改div上面所有的*/
+            $div.next().css({'text-indent':100})   /*#修改div下面第一个*/
+            $div.nextAll().css({'color':'red'})    /*#修改div下面所有的*/
+            siblings 同类
+            parent 父类
+            children 子类
+
+
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <h2>这是第一个h2标签</h2>
+        <p>这是第一个段落</p>
+        <div id="div01">这是一个<span>div</span><span class="sp02">第二个span</span></div>
+        <h2>这是第二个h2标签</h2>
+        <p>这是第二个段落</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>             <!--#html的文档声明,声明当前html文档的版本-->
+<html lang="en">            <!--#根标签:html开始标签 这里设置对外声明此网页是英文 用于统计局统计有多少个英文网站-->
+<head>                      <!--#html标签中的第一个子标签:head开始标签-->
+    <meta charset="UTF-8">  <!--#html文档的设置 这里设置了网页编码格式为utf-8-->
+    <title>哈哈哈哈</title>  <!--#设置html文件的标题-->
+</head>                  <!--   #开始标签结束-->
+<body>                   <!--   #网页显示的主题-->
+<h1>p和div</h1>
+<p>
+    这里上下会空出一行是因为&lt p &gt和&lt /p &gt标签也会占用一行
+</p>
+<div>
+    这是div1标签,&lt div &gt不会占用显示资源
+</div>
+<div>
+    这是div2标签&lt /div &gt不会占用显示资源
+</div>
+<div>
+    这是div3标签 每一个块元素都是单独的一块一行
+</div>
+</br>
+
+<h1>div中创建一个列表</h1>
+<div >
+    <h2>创建一个列表</h2>
+    下面是使用div(块容器)创建的一个列表,逐行创建先创建行,再给每一行创建列
+    <br>
+    &nbsp&nbsp&nbsp&nbsp列表使用&lt table border=1&gt创建,tr代表行,td代表列,th代表加粗,border代表边框后面带边框宽度参数<br>
+    &nbsp<img src="bomb.png" alt="一个飞机">
+    &nbsp<img src="啥都没有" alt="加了alt 图片加载失败会显示这段文字"><br>
+    生成飞机的代码是一段内联标签,也是一个单标签,alt后面可以跟飞机图片的别名当图片加载失败的时候显示<br>
+
+    <table border=1px>
+        <tr>
+            <th>name</th>
+            <th>hp</th>
+            <th>mp</th>
+        </tr>
+        <tr>
+            <td>super_fly</td>
+            <td>6300</td>
+            <td>1300</td>
+        </tr>
+    </table>
+    表格的头尾自带换行
+    文本并不会比如这两句话就是一行
+    <table border="1px">
+        <tr>
+            <td>表格并不能并排显示</td>
+        </tr>
+    </table>
+    <br>
+
+</div>
+
+<h1>有序列表标签和无序列表标签</h1>
+<p>
+&lt ul &gt是一个无序列表标签 <br>
+&lt ol &gt是一个有序列表标签 <br>
+每个标签会自动换行<br>
+声明标签后用&lt li &gt和&lt /li &gt 创建每个标签
+<h3>使用ul创建一个无序标签</h3>
+<ul>
+    <li>ul是一个无序标签</li>
+    <li>第二个ul列表标签</li>
+    <li>第三个ul列表标签</li>
+</ul>
+<h3>使用ol创建一个有序列表标签</h3>
+<ol start="50">
+    <li>ol是一个有序的列表标签</li>
+    <li>可以给start参数</li>
+    <li>从给的参数开始计数</li>
+</ol>
+</p>
+
+<h1>超链接</h1>
+<ul>
+    <h2><li>&lt a href='地址' target='目标' title='鼠标悬停链接的时显示'&gt 链接显示的内容 &lt /a &gt</li></h2>
+    <h4>target=blank代表用新的浏览器窗口来打开链接<br></h4>
+    <li><h3><a href="https://www.baidu.com" target="_parent" title="这是title的功能">打开一下,你就知道!</a></h3></li>
+    <li><h3><a href="https://www.baidu.com" target="_blank" title="这个图片会连接到百度哦"><img src="bomb.png" alt="图片加载失败"></a></h3></li>
+
+</ul>
+
+<div>
+    <h1>表单提交</h1>
+    <h2>格式:</h2>
+    <h3>&lt form action='提交地址' method='post/get' &gt &lt /form &gt</h3>
+    <ul>
+        <h3><li>信息使用k:v的方式提交</li></h3>
+
+        <h3><li>libel:表示表单元素的文字标注标签，定义文字标注</li></h3>
+        <ul><li>libel for=id 给id参数可以绑定</li></ul>
+
+        <h3><li>textarea:表示表单元素的多行文本输入框标签 定义多行文本输入框</li></h3>
+        <h3><li>select:示表单元素的下拉列表标签 定义下拉列表</li></h3>
+        <h4>使用select与option标签,注意select的key值是name,option中是值必须指向value值</h4>
+        <h4>option标签 与select标签配合，定义下拉列表中的选项</h4>
+        <h3><li>input type='功能'万能控制符 name为key,value为value,id为地址,</li></h3>
+
+        <ul>
+
+            <h4>
+
+
+                <li>type="text" 定义单行文本输入框</li>
+                <li>type="password" 定义密码输入框</li>
+                <li>type="radio" 定义单选框</li>
+                <li>type="radio" 定义单选框</li>
+
+                <ul><li>通过name的参数来竞争</li>
+                <li>name是key,value是值</li></ul>
+                <li>type="checkbox" 定义复选框</li>
+                <li>type="file" 定义上传文件</li>
+                <li>type="submit" 定义提交按钮</li>
+                <li>type="button" 定义一个普通按钮</li>
+
+
+
+
+            </h4>
+        </ul>
+
+    </ul>
+
+    <form action="http://127.0.0.1:8800/" method="post">
+        <label>User_Name:</label><input type="text" name="User_Name" > <br>
+        <label>姓名：</label><input type="text"> <br>
+        user_name<input type="text" name="user_name"> <br>
+
+        PassWord :<input type="password" name="PassWord"><br>
+
+        <input type="submit" value="提交一下">
+        <input type="reset" value="重置一下">
+    </form>
+</div>
+
+
+</body>
+</html>
