@@ -196,6 +196,7 @@ background 背景底色
 bold 粗体
 solid 实线
 dashed 虚线
+embed 嵌入
 align 文本排向
 block 块
 collapse 折叠
