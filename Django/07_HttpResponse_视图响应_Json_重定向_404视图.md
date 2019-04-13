@@ -45,6 +45,7 @@ def index_03(request):
 ```
 
 
+
 ## 2. HttpResponse子类(未实现)
 
 > Django提供了一系列HttpResponse的子类，可以快速设置状态码
@@ -62,6 +63,9 @@ HttpResponseGone 410
 HttpResponseServerError 500
 ```
 
+**通过在template文件夹下创建'404.html'的文件客户端在访问一个不存在的路径时,会自动给客户返回404文件**
+
+> <h2>{{ request_path }}</h2>    可以获取到客户访问的路径进行打印
 
 
 ## 3. JsonResponse
@@ -82,6 +86,8 @@ def demo_view(request):
     #!注意,传入的对象需要是字典格式
     return JsonResponse({"name":"小明","age":18})
 ```
+
+
 
 ## 4.redirect重定向
 
