@@ -281,3 +281,7 @@ redirect 重定向
 application 应用
 session 会话
 patterns 模式
+dispatch 分发
+caches 高速缓存
+location 位置
+engine 引擎

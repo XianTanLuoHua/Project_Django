@@ -8,7 +8,7 @@
 
 > content:表示返回的内容
 > charset:表示返回的编码格式
-> status_code:表示响应的状态码
+> status_code:表示响应的状态码 100~599
 > content_type:表示响应的MIME类型
 
 ### 方法:
@@ -37,7 +37,7 @@
 HttpResponse(
     content=响应体, 
     content_type=响应体数据类型, 
-    status=状态码
+    status=状态码 100~599
 )
 ```
 
@@ -102,19 +102,29 @@ def demo_view(request):
     #!注意,传入的对象需要是字典格式
     return JsonResponse({"name":"小明","age":18})
 ```
+**如果使用JsonResponse类发送一个非字典格式的数据,需要设置safe=Flase**
+
+	from django.http import JsonResponse
+	def demo_view(request):
+		a = [{"name":"小明"},{"age":18}]
+		return JsonResponse(a,safe=Flase)
 
 
 
 ## 4.重定向
 
 ### 4.1redirect
+
+> redirect内部使用的HttpResponse的对象
+
 ```
 def index_06(request): #对客户端发来的请求进行重定向
     return redirect('/index_06_02/')
 def index_06_02(request): #客户端转到的地址
     return HttpResponse('已经重定向访问到index_06_02了')
 ```
-此时客户端访问index_06/服务器会重定向到index_06_02的地址
+> 此时客户端访问index_06/服务器会重定向到index_06_02的地址
+
 ### 4.2HttpResponseRedirect
 	def index_06(request): #对客户端发来的请求进行重定向
 	    return HttpResponseRedirect('/index_06_02/')

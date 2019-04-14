@@ -64,6 +64,7 @@ print(request.path)打印客户端发来的参数
 
 	1.在urls中添加url(r'index_01/(\w+)/(\d+)/',users.views.index),将用户的访问url地址re匹配然后分组
 	2.访问http://127.0.0.1:8000/index_01/aaa/1234/ 这个地址可以匹配上面的
+	def index(request,a,b)
 	3.在views中响应的index函数中print(a,b) 打印aaa,1234 将按照**顺序**进行挨个传入
 
 **2.1.3按关键字传入**
@@ -128,7 +129,7 @@ def get_body_json(request):
     #python3.6及以上版本中, json.loads()方法可以接收str和bytes类型
     #但是python3.5以及以下版本中, json.loads()方法只能接收str, 所以我们的版本如果是
     #3.5 需要有上面的编码步骤.
-
+	#没有loads之前是字符串类型的字典
     req_data = json.loads(json_str)
     print(req_data['a'])
     print(req_data['b'])
