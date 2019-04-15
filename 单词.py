@@ -285,3 +285,4 @@ dispatch 分发
 caches 高速缓存
 location 位置
 engine 引擎
+safe 安全的

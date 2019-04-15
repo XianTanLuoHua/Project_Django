@@ -33,3 +33,19 @@ def demo_view(request):
     response.set_cookie('age', '18', max_age=3600)  #设置一个有效期一小时的Cookie
     return response
 ```
+## 读取Cookie
+
+可以通过**HttpRequest**对象的**COOKIES**属性来读取本次请求携带的cookie值。**request.COOKIES为字典类型**。
+
+```
+def demo_view(request):
+    cookie1 = request.COOKIES.get('itcast1')
+    print(cookie1)
+    return HttpResponse('OK')
+```
+
+
+
+## 删除Cookie
+
+response.delete_cookie(key)
