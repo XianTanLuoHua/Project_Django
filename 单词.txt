@@ -286,3 +286,16 @@ caches 高速缓存
 location 位置
 engine 引擎
 safe 安全的
+integer 整数
+token 象征 标志
+cascade 级联
+nothing 没有事物
+include 包括
+exclude 非包括
+exact 精确
+contains 包含
+related 有关系
+migration 迁移
+migrate 移动
+cascade 串联
+register 注册
