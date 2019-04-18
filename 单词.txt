@@ -301,3 +301,5 @@ cascade 串联
 register 注册
 description 描述
 field 领域
+environment 环境
+manage 管理

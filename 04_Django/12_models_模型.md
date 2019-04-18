@@ -289,14 +289,14 @@ class HeroInfo(models.Model):
 ## 4.1 生成迁移文件
 
 ```
-python manage.py makemigrations apps_name   
+python manage.py makemigrations apps_name(可能需要输入app的名称)
 ```
 
 
 ## 4.2 同步到数据库中
 
 ```
-python manage.py migrate app_name
+python manage.py migrate app_name(可能需要输入app的名称)
 ```
 
 
@@ -517,7 +517,7 @@ db.models.DoesNotExist: BookInfo matching query does not exist.
 
 
 
-### 6.2.4 F对象
+### 6.2.4 F 对象
 
 > 用来比较两个不同的字段的信息
 > 使用时需要导入
@@ -535,7 +535,7 @@ BookInfo.objects.filter(bread__gte = F('bcomment))
 
 
 
-### 6.2.5 Q对象
+### 6.2.5 Q 对象
 
 > 一般我们在Django程序中查询数据库操作都是在QuerySet里进行进行，例如下面代码:
 

@@ -5,7 +5,6 @@ Git是目前世界上最先进的分布式版本控制系统
 ### 为什么要进行源代码管理?
 ​	1.方便多人协同开发
 	2.方便版本控制
-![](/home/xiantanluohua/Desktop/工作区暂存区和仓库区.png)
 # git单人本地仓库操作
 ## 安装git
 	sudo apt-get install git
