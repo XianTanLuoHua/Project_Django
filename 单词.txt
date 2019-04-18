@@ -299,3 +299,5 @@ migration 迁移
 migrate 移动
 cascade 串联
 register 注册
+description 描述
+field 领域

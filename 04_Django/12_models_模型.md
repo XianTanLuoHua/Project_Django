@@ -296,7 +296,7 @@ python manage.py makemigrations apps_name
 ## 4.2 同步到数据库中
 
 ```
-python manage.py migrate
+python manage.py migrate app_name
 ```
 
 
